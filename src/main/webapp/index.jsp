@@ -18,11 +18,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<script type="text/javascript" src="js/jquery-3.3.1.js">
-	
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			$('li:empty').text("空内容"); //匹配空li元素
+			$('div ul:parent').css({'background':'#ff1'});//匹配div包含ul元素中包含子元素
+			$("h2:contains('标题')").css({'color':'red'});//或则文本元素
+			$('p:has(span)').css('color','blue'); //包含span 元素的p元素
+		})
 	</script>
   </head>
-  
   <body>
-  	<div > 测试</div>
+  	<div> 
+  		<h2>标题</h2>
+  		<p>段落文本1</p>
+  		<p><span>段落文本2</span></p>
+  		<ul>
+  			<li></li>
+  			<li></li>
+  		</ul>
+  	
+  	</div>
   </body>
 </html>
